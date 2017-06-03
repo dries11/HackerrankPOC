@@ -1,0 +1,34 @@
+{
+    "data": {
+        "id": 147033,
+        "name": "Test",
+        "duration": 60,
+        "state": 1,
+        "questions_count": 2,
+        "questions_data": [
+            {
+                "name": "FizzBuzz",
+                "question": "<div style=\"display:none;font-size:1px;color:#333333;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;\">Print <em>n</em> lines of output according to a set of rules.</div>\n\n<p>Complete the <em>fizzBuzz</em> function in the editor below. It has one parameter: an integer, <em>n</em>. The function must print <em>n</em> lines of output. For each line <em>i</em> (where <em>1 &le; i &le; n</em>), print whichever line satisfies the following rules:</p>\n\n<ul>\n\t<li>If <em>i</em> is a multiple of both <em>3</em> and <em>5</em>, print <em>FizzBuzz</em>.</li>\n\t<li>If <em>i</em> is a multiple of <em>3</em> (but not <em>5</em>), print <em>Fizz</em>.</li>\n\t<li>If <em>i</em> is a multiple of <em>5</em> (but not <em>3</em>), print <em>Buzz</em>.</li>\n\t<li>For all other <em>i</em>&#39;s not satisfying the above rules, print the value of <em>i</em>.</li>\n</ul>\n\n<p>&nbsp;</p>\n\n<p><strong>Input Format</strong></p>\n\n<p>Locked stub code in the editor reads an integer, <em>n</em>, from stdin and passes it to the function.</p>\n\n<p>&nbsp;</p>\n\n<p><strong>Constraints</strong></p>\n\n<ul>\n\t<li><em>0 &lt; n &lt; 2 &times; 10<sup>5</sup></em></li>\n</ul>\n\n<p>&nbsp;</p>\n\n<p><strong>Output Format</strong></p>\n\n<p>Print exactly <em>n</em> lines of output. For each line <em>i</em> (where <em>1 &le; i &le; n</em>), print whichever line satisfies the following rules:</p>\n\n<ul>\n\t<li>If <em>i</em> is a multiple of both <em>3</em> and <em>5</em>, print <em>FizzBuzz</em>.</li>\n\t<li>If <em>i</em> is a multiple of <em>3</em> (but not <em>5</em>), print <em>Fizz</em>.</li>\n\t<li>If <em>i</em> is a multiple of <em>5</em> (but not <em>3</em>), print <em>Buzz</em>.</li>\n\t<li>For all other <em>i</em>&#39;s not satisfying the above rules, print the value of <em>i</em>.</li>\n</ul>\n\n<p>&nbsp;</p>\n\n<p><strong>Sample Input 0</strong></p>\n\n<pre>\n15</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>Sample Output 0</strong></p>\n\n<pre>\n1\n2\nFizz\n4\nBuzz\nFizz\n7\n8\nFizz\nBuzz\n11\nFizz\n13\n14\nFizzBuzz</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>Explanation 0</strong></p>\n\n<p>The numbers <em>3</em>, <em>6</em>, <em>9</em>, and <em>12</em> are multiples of three (but not five), so we print <em>Fizz</em> on those lines.</p>\n\n<p>The numbers <em>5</em> and <em>10</em> are multiples of five (but not three), so we print <em>Buzz</em> on those lines.</p>\n\n<p>The number <em>15</em> is a multiple of both three and five, so we print <em>FizzBuzz</em> on that line.</p>\n\n<p>None of the other lines are multiples of either three or five, so we print the line number (i.e., the value of <em>i</em>) on those lines.</p>\n\n<p>&nbsp;</p>\n",
+                "preview": "Print n lines of output according to a set of rules.",
+                "points": 50,
+                "status": 1
+            },
+            {
+                "name": "Let's Make a Clone!",
+                "question": "<div style=\"display:none;font-size:1px;color:#333333;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;\">Clone an Object in Java.</div>\n\n<p>The following code is provided in the locked portion of the editor:</p>\n\n<ul>\n\t<li>The declaration for a class named <em>Human</em>.</li>\n\t<li>A <em>Solution</em> class with a <em>main</em> method that creates a <em>Human</em> object and tests the implementation of the <em>Human</em> class&#39; <em>clone</em> method.</li>\n</ul>\n\n<p>&nbsp;</p>\n\n<p>Complete the <em>Human</em> class in the editor below by writing the following:</p>\n\n<ol>\n\t<li>A field that stores a <em>String</em> called <em>name</em>.</li>\n\t<li>A <em>Human</em> class constructor that has one parameter: a String, <em>name</em>.</li>\n\t<li>A <em>clone</em> method that returns a clone of the calling <em>Human</em> object.</li>\n</ol>\n\n<p>&nbsp;</p>\n\n<p><strong>Note:</strong> Do not add an access modifier to <em>Human</em>&#39;s class declaration, as the <em>Solution</em> class is <em>public</em>.</p>\n\n<p>&nbsp;</p>\n\n<p><strong>Input Format</strong></p>\n\n<p>Locked stub code in the editor reads a single string denoting <em>name</em> from stdin and passes it to the <em>Human</em> class constructor.</p>\n\n<p>&nbsp;</p>\n\n<p><strong>Output Format</strong></p>\n\n<p>The <em>clone</em> method must return a <em>Human</em> object that is a clone of the calling <em>Human</em> object. This is printed to stdout by locked stub code in the editor.</p>\n\n<p>&nbsp;</p>\n\n<p><strong>Sample Input 0</strong></p>\n\n<pre>\nSam</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>Sample Output 0</strong></p>\n\n<pre>\nCreated a human called: Sam\nCreated a clone called: Sam</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>Explanation 0</strong></p>\n\n<p>The <em>main</em> method reads the string <em>Sam</em> from stdin and passes it to the <em>Human</em> class constructor, where it&#39;s saved to the <em>name</em> field of the new <em>Human</em> instance returned by the constructor and assigned to variable <em>h1</em>. It then calls the <em>clone</em> method on <em>h1</em>, which returns the clone of <em>h1</em> and assigns it to <em>h2</em>. If the <em>clone</em> method is implemented correctly, <em>main</em> prints the expected output shown above.</p>\n",
+                "preview": "Clone an Object in Java.",
+                "points": 10,
+                "status": 1
+            }
+        ],
+        "totalpoints": 60,
+        "invited": 1,
+        "inprogress": 0,
+        "completed": 1,
+        "qualified": 0,
+        "failed": 0,
+        "to_evaluate": 1
+    },
+    "status": true,
+    "message": "Success"
+}

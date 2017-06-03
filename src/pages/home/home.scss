@@ -9,3 +9,13 @@ page-home {
 [text-color="my-custom-color"] {
     color: #00AC7D;
 }
+
+.topGrid{
+    border-style: solid;
+    border: 0px 0px 2px 0px;
+    border-color: black;
+}
+
+.gridList:hover {
+    background-color: #26B890;
+}

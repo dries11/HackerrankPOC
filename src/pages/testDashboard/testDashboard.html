@@ -1,0 +1,113 @@
+<ion-header>
+    <ion-navbar class="navbar" color="primary">
+        <ion-title>
+            <span text-color="my-custom-color">
+                {{test.name}}
+            </span>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-card>
+                    <ion-card-header>
+                        Current Status
+                    </ion-card-header>
+                    <ion-card-content>
+                        <canvas #progressVsCompletedPieChart></canvas>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+            <ion-col>
+                <ion-card>
+                    <ion-card-header>
+                        Maximum Score
+                    </ion-card-header>
+                    <ion-card-content class="score">
+                        {{maximumScore}}
+                    </ion-card-content>
+                </ion-card>
+                <ion-card>
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col>
+                                <ion-card-header>
+                                    Low Score
+                                </ion-card-header>
+                            </ion-col>
+                            <ion-col>
+                                <ion-card-header>
+                                    Median
+                                </ion-card-header>
+                            </ion-col>
+                            <ion-col>
+                                <ion-card-header>
+                                    High Score
+                                </ion-card-header>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col>
+                                <ion-card-content class="score">
+                                    {{lowScore}}
+                                </ion-card-content>
+                            </ion-col>
+                            <ion-col>
+                                <ion-card-content class="score">
+                                    {{averageScore}}
+                                </ion-card-content>
+                            </ion-col>
+                            <ion-col>
+                                <ion-card-content class="score">
+                                    {{highScore}}
+                                </ion-card-content>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-card>
+    <ion-card-header>
+        Students
+    </ion-card-header>
+    <ion-card-content>
+        <ion-list>
+            <button ion-item *ngFor="let testCandidate of testCandidates" (click)="toCandidateInfoPage(testCandidate)">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-3>
+                            {{testCandidate.full_name}}
+                        </ion-col>
+                        <ion-col col-3>
+                            {{testCandidate.email}}
+                        </ion-col>
+                        <ion-col col-4>
+                            Status:
+                            <div *ngIf="testCandidate.status == -1">
+                                Invited
+                            </div>
+                            <div *ngIf="testCandidate.status == 0">
+                                In Progress
+                            </div>
+                            <div *ngIf="testCandidate.status == 1">
+                                Test Finished
+                            </div>
+                            <div *ngIf="testCandidate.status == 6 || testCandidate.status == 7">
+                                Process Completed
+                            </div>
+                        </ion-col>
+                        <ion-col col-2>
+                            Score: {{testCandidate.score}}
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </button>
+        </ion-list>
+    </ion-card-content>
+</ion-card>
+</ion-content>

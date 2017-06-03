@@ -1,25 +1,30 @@
-import { Http, Headers } from '@angular/http';
+import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
+
+import * as config from '../assets/config';
 
 @Injectable()
 export class TestService{
 
-    private apiKey: string = "#######################";
-    private apiBaseUrl: string = "https://www.hackerrank.com/x/api/v3/";
+    private apiKey: string = config.small_key;
+    private apiKeyTwo: string = config.small_key;
+    private apiBaseUrl: string = config.api_base_url;
 
     constructor(private http:Http){}
 
-    private createAuthHeader(headers: Headers){
-        headers.append("Authorization", "Bearer " + this.apiKey);
+    getAllTests(): Promise<any>{
+        return new Promise(resolve => {
+            this.http.get(this.apiBaseUrl + "tests?limit=100&access_token=" + this.apiKey)
+            .map(res => res.json()).subscribe(data => { resolve(data.data)
+            });
+        });
     }
 
-    getAllTests(): Promise<any>{
-        let headers = new Headers();
-        this.createAuthHeader(headers);
+    getOneTest(id: string): Promise<any>{
         return new Promise(resolve => {
-            this.http.get(this.apiBaseUrl + "tests?limit=100&offset=0", { headers: headers})
-            .map(res => res.json()).subscribe(data => { resolve(data);
+            this.http.get(this.apiBaseUrl + "tests/" + id + "?&access_token=" + this.apiKey)
+            .map(res => res.json()).subscribe(data => { resolve(data.data)
             });
         });
     }

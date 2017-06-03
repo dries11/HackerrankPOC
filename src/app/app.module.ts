@@ -7,29 +7,42 @@ import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { TestDashboard } from '../pages/testDashboard/testDashboard';
+import { CandidateInfoPage } from '../services/candidateInfo/candidateInfo';
+import { ProfilePage } from '../pages/profile/profile';
 
 import { TestService } from '../services/testService';
+import { TestCandidateService } from '../services/testCandidateService';
+
+import { TagPipe } from '../services/tagPipe';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    TestDashboard,
+    CandidateInfoPage,
+    TagPipe,
+    ProfilePage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    TestDashboard,
+    CandidateInfoPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    TestService
+    TestService, TestCandidateService,
   ]
 })
 export class AppModule {}

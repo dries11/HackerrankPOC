@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-navbar class="navbar" color=primary>
+        <ion-title>
+            <span text-color="my-custom-color">
+                {{candidateEmail}}
+            </span>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            Tests Taken
+        </ion-card-header>
+        <ion-card-content>
+            <ion-grid>
+                <ion-row *ngFor="let test of userTests" class="center">
+                    <ion-col>
+                        {{test.name}}
+                    </ion-col>
+                    <ion-col>
+                        {{test.score}} / {{test.max_score}}
+                    </ion-col>
+                    <ion-col>
+                        <button ion-button color="primary" round>
+                            View Questions
+                        </button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

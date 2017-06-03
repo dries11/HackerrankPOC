@@ -1,0 +1,49 @@
+{
+    "data": {
+        "id": 3985501,
+        "email": "david@zipcodewilmington.com",
+        "tid": 147033,
+        "score": 60,
+        "status": 7,
+        "max_score": 60,
+        "questions": [
+            {
+                "status": "correct",
+                "preview": "Print n lines of output according to a set of rules.",
+                "text": "Print n lines of output according to a set of rules.\n\nComplete the fizzBuzz function in the editor below. It has one parameter: an integer, n. The function must print n lines of output. For each line i (where 1 ≤ i ≤ n), print whichever line satisfies the following rules:\n\n\n\tIf i is a multiple of both 3 and 5, print FizzBuzz.\n\tIf i is a multiple of 3 (but not 5), print Fizz.\n\tIf i is a multiple of 5 (but not 3), print Buzz.\n\tFor all other i's not satisfying the above rules, print the value of i.\n\n\n \n\nInput Format\n\nLocked stub code in the editor reads an integer, n, from stdin and passes it to the function.\n\n \n\nConstraints\n\n\n\t0 < n < 2 × 105\n\n\n \n\nOutput Format\n\nPrint exactly n lines of output. For each line i (where 1 ≤ i ≤ n), print whichever line satisfies the following rules:\n\n\n\tIf i is a multiple of both 3 and 5, print FizzBuzz.\n\tIf i is a multiple of 3 (but not 5), print Fizz.\n\tIf i is a multiple of 5 (but not 3), print Buzz.\n\tFor all other i's not satisfying the above rules, print the value of i.\n\n\n \n\nSample Input 0\n\n\n15\n\n \n\nSample Output 0\n\n\n1\n2\nFizz\n4\nBuzz\nFizz\n7\n8\nFizz\nBuzz\n11\nFizz\n13\n14\nFizzBuzz\n\n \n\nExplanation 0\n\nThe numbers 3, 6, 9, and 12 are multiples of three (but not five), so we print Fizz on those lines.\n\nThe numbers 5 and 10 are multiples of five (but not three), so we print Buzz on those lines.\n\nThe number 15 is a multiple of both three and five, so we print FizzBuzz on that line.\n\nNone of the other lines are multiples of either three or five, so we print the line number (i.e., the value of i) on those lines.\n\n \n",
+                "score": 50,
+                "points": 50,
+                "name": "FizzBuzz",      
+                "my_answer": "/*\n * Complete the function below.\n */\nprivate static final String MOD_3_ONLY = \"Fizz\";\nprivate static final String MOD_5_ONLY = \"Buzz\";\nprivate static final String MOD_3_AND_5 = \"FizzBuzz\";\n\n\n    static void fizzBuzz(int n) {\n        String out;\n        for (int i = 1; i <= n; i++){\n            out = null;\n            if(i % 3 == 0 && i % 5 == 0){\n                out = MOD_3_AND_5;\n                \n            }else{\n                out = i % 3 == 0 ? MOD_3_ONLY : i % 5 == 0 ? MOD_5_ONLY : null;\n            }\n            //intentionally awful practice. Could be more fun to use an Optional<String>\n            System.out.println(out == null ? i : out);\n        }\n\n\n    }\n\n",
+                "solution_template_head": "import java.io.*;\nimport java.util.*;\nimport java.text.*;\nimport java.math.*;\nimport java.util.regex.*;\n\npublic class Solution {\n    ",
+                "solution_template_tail": "    public static void main(String[] args){\n        Scanner in = new Scanner(System.in);\n        int _n;\n        _n = Integer.parseInt(in.nextLine().trim());\n        \n        fizzBuzz(_n);\n        \n    }\n}"
+            },
+            {
+                "status": "correct",
+                "preview": "Clone an Object in Java.",
+                "text": "Clone an Object in Java.\n\nThe following code is provided in the locked portion of the editor:\n\n\n\tThe declaration for a class named Human.\n\tA Solution class with a main method that creates a Human object and tests the implementation of the Human class' clone method.\n\n\n \n\nComplete the Human class in the editor below by writing the following:\n\n\n\tA field that stores a String called name.\n\tA Human class constructor that has one parameter: a String, name.\n\tA clone method that returns a clone of the calling Human object.\n\n\n \n\nNote: Do not add an access modifier to Human's class declaration, as the Solution class is public.\n\n \n\nInput Format\n\nLocked stub code in the editor reads a single string denoting name from stdin and passes it to the Human class constructor.\n\n \n\nOutput Format\n\nThe clone method must return a Human object that is a clone of the calling Human object. This is printed to stdout by locked stub code in the editor.\n\n \n\nSample Input 0\n\n\nSam\n\n \n\nSample Output 0\n\n\nCreated a human called: Sam\nCreated a clone called: Sam\n\n \n\nExplanation 0\n\nThe main method reads the string Sam from stdin and passes it to the Human class constructor, where it's saved to the name field of the new Human instance returned by the constructor and assigned to variable h1. It then calls the clone method on h1, which returns the clone of h1 and assigns it to h2. If the clone method is implemented correctly, main prints the expected output shown above.\n",
+                "score": 10,
+                "points": 10,
+                "name": "Let's Make a Clone!",
+                "my_answer": "// Complete the given code\nclass Human implements Cloneable{\n    \n    String name;\n    \n    public Human(String name){\n        this.name = name;\n    }\n    \n    @Override\n    public Human clone() throws CloneNotSupportedException{\n        return (Human)super.clone();\n    }\n    \n}",
+                "solution_template_head": "import java.util.*;",
+                "solution_template_tail": "public class Solution {\n\n    public static void main(String[] args) {\n        \n        try {  \n            Scanner in = new Scanner(System.in);\n \n            Human h1 = new Human(in.next());  \n            Human h2 = (Human) h1.clone();  \n            \n            in.close();\n            \n            if (h1 == h2) {\n                System.out.println(\"You did not clone the object.\");\n            }\n            else {\n                System.out.println(\"Created a human called: \" + h1.name);  \n                System.out.println(\"Created a clone called: \" + h2.name);  \n            } \n              \n        }\n        catch (CloneNotSupportedException e) {\n            e.printStackTrace();\n        }  \n    }\n}\n"
+            }
+        ],
+        "scores_tags_split": {
+            "Easy": "60.0/60.0",
+            "Core CS": "60.0/60.0",
+            "General Programming": "50.0/50.0",
+            "Basic Programming": "50.0/50.0",
+            "Loops": "50.0/50.0",
+            "Conditionals": "50.0/50.0",
+            "Java": "10.0/10.0",
+            "Object Oriented Programming": "10.0/10.0",
+            "language specific": "10.0/10.0",
+            "Cloning": "10.0/10.0"
+        }
+    },
+    "status": true,
+    "message": "Success",
+    "http_status": 200
+}

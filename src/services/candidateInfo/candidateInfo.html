@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-navbar class="navbar" color="primary">
+        <ion-title>
+            <span text-color="my-custom-color">
+                {{candidate.full_name}}
+            </span>
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button round clear (click)="goToProfile(candidate.email)">
+                Profile
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row *ngFor="let question of questions">
+            <ion-card>
+                <ion-card-header>
+                    {{question.preview}}
+                </ion-card-header>
+                <ion-card-content>
+                    <pre>
+                        <code>
+                            {{question.solution_template_head}}
+                            {{question.my_answer}}
+                            {{question.solution_template_tail}}
+                        </code>
+                    </pre>
+                </ion-card-content>
+            </ion-card>
+        </ion-row>
+    </ion-grid>
+</ion-content>

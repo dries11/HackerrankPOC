@@ -8,4 +8,52 @@
   </ion-navbar>
 </ion-header>
 
-
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      GET ALL TESTS /tests endpoint
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid class="topGrid">
+        <ion-row>
+          <ion-col col-3>
+            Test Name
+          </ion-col>
+          <ion-col col-2>
+            Question Count
+          </ion-col>
+          <ion-col col-3>
+            Duration
+          </ion-col>
+          <ion-col col-3>
+            Status
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row *ngFor="let test of tests" clickable (click)="toDashBoard(test)" class="gridList">
+            <ion-col col-3>
+              {{test.name}}
+            </ion-col>
+            <ion-col col-2>
+              {{test.questions_count}}
+            </ion-col>
+            <ion-col col-3>
+              {{test.duration}}
+            </ion-col>
+            <ion-col col-3>
+              <div *ngIf="test.invited == 0 && test.inprogress == 0 && test.completed > 0">
+                <ion-icon name="checkmark" style="color: green"></ion-icon> - Completed
+              </div>
+              <div *ngIf="test.invited > 0 && test.inprogress >= 0">
+                <ion-icon name="code-working" style="color: #F3B815"></ion-icon> - In Progress
+              </div>
+              <div *ngIf="(test.invited == 0 || test.invited > 0) && test.inprogress == 0 && test.completed == 0">
+                <ion-icon name="alert" style="color: red"></ion-icon> - Not Started
+              </div>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
