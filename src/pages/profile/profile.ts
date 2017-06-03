@@ -11,6 +11,8 @@ export class ProfilePage{
 
     candidateEmail: any;
     userTests: any;
+    showQuestions: boolean = false;
+    showPrompt: boolean = false;
 
     constructor(private navParams: NavParams, private testCandidateService:TestCandidateService){
         this.candidateEmail = this.navParams.data.candidateEmail;
@@ -20,6 +22,14 @@ export class ProfilePage{
         this.testCandidateService.getUserTests(this.candidateEmail).then(data => {
             this.userTests = data;
         });
+    }
+
+    questionToggle(){
+        this.showQuestions = !this.showQuestions;
+    }
+
+    promptToggle(){
+        this.showPrompt = !this.showPrompt;
     }
 
 }

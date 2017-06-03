@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { ViewController, NavParams, LoadingController, NavController } from 'ionic-angular';
 
-import { ProfilePage } from '../../pages/profile/profile';
+import { ProfilePage } from '../profile/profile';
 
-import { TestCandidateService } from '../testCandidateService';
-import { TestService } from '../testService';
+import { TestCandidateService } from '../../services/testCandidateService';
+import { TestService } from '../../services/testService';
 
 
 @Component({

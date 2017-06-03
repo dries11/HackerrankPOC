@@ -4,7 +4,7 @@ import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { Chart } from 'chart.js';
 import { TestService } from '../../services/testService';
 import { TestCandidateService } from '../../services/testCandidateService';
-import { CandidateInfoPage } from '../../services/candidateInfo/candidateInfo';
+import { CandidateInfoPage } from '../candidateInfo/candidateInfo';
 
 @Component({
     selector: 'page-testDashboard',

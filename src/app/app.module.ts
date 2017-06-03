@@ -8,7 +8,7 @@ import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { TestDashboard } from '../pages/testDashboard/testDashboard';
-import { CandidateInfoPage } from '../services/candidateInfo/candidateInfo';
+import { CandidateInfoPage } from '../pages/candidateInfo/candidateInfo';
 import { ProfilePage } from '../pages/profile/profile';
 
 import { TestService } from '../services/testService';

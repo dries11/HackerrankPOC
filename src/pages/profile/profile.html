@@ -11,23 +11,74 @@
 <ion-content>
     <ion-card>
         <ion-card-header>
-            Tests Taken
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        Test's Taken
+                    </ion-col>
+                </ion-row>
+                <ion-row class="lowerLevel">
+                    <ion-col>
+                        Test Name
+                    </ion-col>
+                    <ion-col>
+                        Score
+                    </ion-col>
+                    <ion-col>
+                        View Questions
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
         </ion-card-header>
         <ion-card-content>
             <ion-grid>
-                <ion-row *ngFor="let test of userTests" class="center">
-                    <ion-col>
-                        {{test.name}}
-                    </ion-col>
-                    <ion-col>
-                        {{test.score}} / {{test.max_score}}
-                    </ion-col>
-                    <ion-col>
-                        <button ion-button color="primary" round>
-                            View Questions
-                        </button>
-                    </ion-col>
-                </ion-row>
+                <div *ngFor="let test of userTests" class="center">
+                    <ion-row>
+                        <ion-col>
+                            {{test.name}}
+                        </ion-col>
+                        <ion-col>
+                            {{test.score}} / {{test.max_score}}
+                        </ion-col>
+                        <ion-col>
+                            <div *ngIf="!showQuestions">
+                                <button ion-button clear round icon-only (click)="questionToggle()">
+                                    <ion-icon name="arrow-dropright-circle" color="secondary"></ion-icon>
+                                </button>
+                            </div>
+                            <div *ngIf="showQuestions">
+                                <button ion-button clear round icon-only (click)="questionToggle()">
+                                    <ion-icon name="arrow-dropdown-circle" color="primary"></ion-icon>
+                                </button>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                    <div class="lineBreak"></div>
+                    <div *ngIf="showQuestions">
+                        <ion-grid>
+                            <ion-row *ngFor="let question of test.questions" class="center">
+                                <ion-col>
+                                    {{question.name}}
+                                </ion-col>
+                                <ion-col>
+                                    {{question.score}} / {{question.points}}
+                                </ion-col>
+                                <ion-col>
+                                    <div *ngIf="!showPrompt">
+                                        <button ion-button clear round icon-only (click)="promptToggle()">
+                                            <ion-icon name="arrow-dropright-circle" color="secondary"></ion-icon>
+                                        </button>
+                                    </div>
+                                    <div *ngIf="showPrompt">
+                                        <button ion-button clear round icon-only (click)="promptToggle()">
+                                            <ion-icon name="arrow-dropdown-circle" color="primary"></ion-icon>
+                                        </button>
+                                    </div>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </div>
+                </div>
             </ion-grid>
         </ion-card-content>
     </ion-card>
