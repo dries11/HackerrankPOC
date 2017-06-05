@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            {{question.name}}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            {{question.preview}}
+        </ion-card-header>
+        <ion-card-content>
+            <div class="questionDirections">
+                {{question.text}}
+            </div>
+            <pre>
+                <code>
+                <div class="questionProvided">
+                    {{question.solution_template_head}}
+                </div>
+                <div class="questionAnswer">
+                    {{question.my_answer}}
+                </div>
+                <div class="questionProvided">
+                    {{question.solution_template_tail}}
+                </div>
+                </code>
+            </pre>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

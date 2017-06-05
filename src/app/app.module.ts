@@ -10,6 +10,8 @@ import { HomePage } from '../pages/home/home';
 import { TestDashboard } from '../pages/testDashboard/testDashboard';
 import { CandidateInfoPage } from '../pages/candidateInfo/candidateInfo';
 import { ProfilePage } from '../pages/profile/profile';
+import { QuestionModal } from '../pages/questionModal/questionModal';
+import { QuestionPage } from '../pages/question/question';
 
 import { TestService } from '../services/testService';
 import { TestCandidateService } from '../services/testCandidateService';
@@ -23,7 +25,9 @@ import { TagPipe } from '../services/tagPipe';
     TestDashboard,
     CandidateInfoPage,
     TagPipe,
-    ProfilePage
+    ProfilePage,
+    QuestionModal,
+    QuestionPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,9 @@ import { TagPipe } from '../services/tagPipe';
     HomePage,
     TestDashboard,
     CandidateInfoPage,
-    ProfilePage
+    ProfilePage,
+    QuestionModal,
+    QuestionPage
   ],
   providers: [
     StatusBar,

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavParams } from 'ionic-angular';
+import { NavParams, ModalController } from 'ionic-angular';
 
 import { TestCandidateService } from '../../services/testCandidateService';
+import { QuestionModal } from '../questionModal/questionModal';
 
 @Component({
     templateUrl: './profile.html',
@@ -11,10 +12,9 @@ export class ProfilePage{
 
     candidateEmail: any;
     userTests: any;
-    showQuestions: boolean = false;
-    showPrompt: boolean = false;
+    questions: any;
 
-    constructor(private navParams: NavParams, private testCandidateService:TestCandidateService){
+    constructor(private navParams: NavParams, private testCandidateService:TestCandidateService, private modalCtrl:ModalController){
         this.candidateEmail = this.navParams.data.candidateEmail;
     }
 
@@ -24,12 +24,11 @@ export class ProfilePage{
         });
     }
 
-    questionToggle(){
-        this.showQuestions = !this.showQuestions;
-    }
-
-    promptToggle(){
-        this.showPrompt = !this.showPrompt;
+    showQuestions(test){
+        let questionsModal = this.modalCtrl.create(QuestionModal, {
+            questions: test.questions
+        });
+        questionsModal.present();
     }
 
 }
